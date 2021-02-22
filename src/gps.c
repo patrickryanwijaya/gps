@@ -194,8 +194,8 @@ bool mgos_gps_init(void)
     mgos_uart_config_set_defaults(gps_uart_no, &ucfg);
     ucfg.baud_rate = mgos_sys_config_get_gps_baud_rate();
     ucfg.num_data_bits = 8;
-    ucfg.dev.tx_gpio = 12;
-    ucfg.dev.rx_gpio = 14;
+    ucfg.dev.tx_gpio = mgos_sys_config_get_gps_tx_gpio();
+    ucfg.dev.rx_gpio = mgos_sys_config_get_gps_rx_gpio();
  
 
     //ucfg.parity = MGOS_UART_PARITY_NONE;
